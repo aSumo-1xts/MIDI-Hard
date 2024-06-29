@@ -11,22 +11,22 @@
 
 
 
+
+
 #include <MIDIUSB.h>
-
-
 
 // #define LEDpin X
 /*
-↑If necessary, use with "digitalWrite(LEDpin, LOW);"
+    ↑If necessary, use with "digitalWrite(LEDpin, LOW);"
     and "digitalWrite(LEDpin, HIGH);" described below.
-X may be 13 if you use UNO R3.
+    X may be 13 if you use UNO R3.
 */
-
-
 
 uint16_t    BPM       = 0;  //!< global BPM
 uint8_t     ppqn      = 0;  //!< 24 Pulses Per Quarter Note
 uint32_t    startTime = 0;  //!< for Timer
+
+
 
 
 
@@ -52,6 +52,8 @@ void getSerialMIDI(int16_t *vals) {
         vals[i] = kago[i];
     }
 }
+
+
 
 
 
@@ -86,18 +88,14 @@ void clock2BPM() {
 
 
 
-/**
- * @brief setup()
- */
+
+
+//! @brief setup function
 void setup() {
     Serial.begin(115200);
 }
 
-
-
-/**
- * @brief loop()
- */
+//! @brief loop function
 void loop() {
     clock2BPM();
 }
